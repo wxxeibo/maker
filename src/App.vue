@@ -2,17 +2,32 @@
   <div id="app">
     <img src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
-    <b-alert show>Default Alert</b-alert>
+    <b-alert show>{{ foo }}</b-alert>
   </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
+const octokit = require('@octokit/rest')()
 
 export default {
   name: 'app',
   components: {
     HelloWorld
+  },
+  data: () => ({
+    foo: 'bar'
+  }),
+  mounted: function () {
+    var self = this;
+    octokit.repos
+      .get({
+        owner: 'wxxeibo',
+        repo: 'maker'
+      })
+      .then(({data}) => {
+        self.foo = data;
+      })
   }
 }
 </script>
