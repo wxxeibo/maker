@@ -29,6 +29,9 @@
     "extends": [
       "plugin:vue/essential",
       "eslint:recommended"
+    ],
+    "plugins": [
+      "html"
     ]
   },
   "postcss": {
