@@ -10,6 +10,7 @@
   "dependencies": {
     "@octokit/rest": "^15.4.0",
     "bootstrap-vue": "^2.0.0-rc.8",
+    "debug": "^3.1.0",
     "vue": "^2.5.16"
   },
   "devDependencies": {
